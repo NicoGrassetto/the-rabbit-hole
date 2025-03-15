@@ -1,11 +1,14 @@
 ---
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+
 const pageTitle = "About Me";
 
 const identity = {
-    firstName: "Sarah",
-    country: "Canada",
-    occupation: "Technical Writer",
-    hobbies: ["photography", "birdwatching", "baseball"],
+  firstName: "Sarah",
+  country: "Canada",
+  occupation: "Technical Writer",
+  hobbies: ["photography", "birdwatching", "baseball"],
 };
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
@@ -13,6 +16,10 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <html lang="en">
@@ -22,22 +29,20 @@ const goal = 3;
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>{pageTitle}</title>
+
         <style>
             h1 {
                 color: purple;
                 font-size: 4rem;
             }
             .skill {
-                color: green;
+                color: var(--skillColor);
                 font-weight: bold;
             }
         </style>
     </head>
     <body>
-        <a href="/">Home</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
-        <h1>{pageTitle}</h1>
+    <Navigation />
         <h2>... and my new Astro site!</h2>
 
         <p>
