@@ -5,9 +5,23 @@ body {
   font-family: Proxima Nova, sans-serif;
   color: white;
   background-color: black;
+  font-size: .875rem; /* Set the font size to .875rem */
 }
 
 html {
   margin: 0;
   padding: 0;
+}
+
+.layout-container {
+  display: flex;
+}
+
+.layout-container > Navigation {
+  flex-shrink: 0; /* Prevent Navigation from shrinking */
+}
+
+.layout-container .content {
+  flex-grow: 1; /* Allow content to take up remaining space */
+  padding: 1rem; /* Optional: Add padding for better spacing */
 }
