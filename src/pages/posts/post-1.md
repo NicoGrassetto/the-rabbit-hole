@@ -5,8 +5,8 @@ pubDate: 2022-07-01
 description: 'This is the first post of my new Astro blog.'
 author: 'Astro Learner'
 image:
-    url: 'https://docs.astro.build/assets/rose.webp'
-    alt: 'The Astro logo on a dark background with a pink glow.'
+    url: '/blog-images/Screenshot 2025-04-10 at 13.20.53.png'
+    alt: 'Screenshot of building an API with Python and Flask'
 tags: ["astro", "blogging", "learning in public"]
 ---
 # My First Blog Post

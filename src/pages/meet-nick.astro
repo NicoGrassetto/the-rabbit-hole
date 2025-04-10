@@ -1,0 +1,157 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "Meet Nick";
+---
+<BaseLayout pageTitle={pageTitle}>
+  <section class="meet-nick">
+    <h1>Meet Nick</h1>
+    <p>Discover the journey of Nick, a passionate web developer and creator of "The Rabbit Hole."</p>
+    <div class="timeline">
+      {Array.from({ length: 13 }, (_, i) => (
+        <div class="timeline-event" key={i}>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>{2020 + i}</h3>
+            <p>Event description for year {2020 + i}.</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+  <section class="autobiography">
+    <h2>About Nick</h2>
+    <p>Nick is a passionate web developer with a love for creating sleek, modern websites. His journey began in 2020, and since then, he has explored various technologies, including Astro, to build fast and efficient web applications. "The Rabbit Hole" is his platform to share knowledge, projects, and insights with the world.</p>
+  </section>
+  <style>
+    .meet-nick {
+      margin: 4rem 0;
+      text-align: center;
+      color: #f5f5f5;
+    }
+    .meet-nick h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .meet-nick p {
+      font-size: 1.2rem;
+      margin-bottom: 3rem;
+      color: #d3d3d3;
+      animation: fadeIn 2.5s ease-in-out;
+    }
+    .timeline {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow: hidden; /* Hide the horizontal scrollbar */
+      padding: 1rem 0;
+      max-width: 100%;
+      gap: 1rem;
+      animation: scrollTimeline 20s linear infinite; /* Add smooth scrolling animation */
+    }
+    @keyframes scrollTimeline {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    .timeline-event {
+      flex-shrink: 0;
+      width: calc(100% / 3); /* Make events fit dynamically based on viewport */
+      max-width: 300px; /* Set a maximum width for larger screens */
+      min-width: 200px; /* Set a minimum width for smaller screens */
+      text-align: center;
+      scroll-snap-align: center; /* Snap events to the center */
+      animation: slideIn 1.5s ease-in-out;
+    }
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      background-color: #007aff;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin: 0 auto 1rem; /* Center the dot horizontally */
+      animation: pulse 2s infinite;
+    }
+    .timeline-content {
+      background-color: #1a1a1a;
+      padding: 0.5rem 1rem; /* Adjusted padding for smaller cards */
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+      text-align: center; /* Center-align text */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .timeline-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+    }
+    .timeline-content h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1rem; /* Reduced font size for titles */
+      color: #fff;
+    }
+    .timeline-content p {
+      margin: 0;
+      font-size: 0.8rem; /* Reduced font size for descriptions */
+      color: #d3d3d3;
+    }
+    .autobiography {
+      margin: 2rem auto;
+      max-width: 600px;
+      text-align: center;
+      color: #d3d3d3;
+    }
+    .autobiography h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .autobiography p {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        background-color: #007aff;
+      }
+      50% {
+        transform: scale(1.2);
+        background-color: #005bb5;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .timeline-event {
+        width: calc(100% / 2); /* Adjust for smaller screens */
+      }
+    }
+    @media (max-width: 480px) {
+      .timeline-event {
+        width: 100%; /* Full width for very small screens */
+      }
+    }
+  </style>
+</BaseLayout>

@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "Contact Me";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <section class="contact-section">
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <style>
+    .contact-section {
+      background-color: black; /* Changed to black background */
+      color: white; /* Adjust text color for contrast */
+      padding: 2rem; /* Add padding around the section */
+      text-align: center; /* Center-align text */
+    }
+
+    .contact-section h2 {
+      margin-bottom: 1rem; /* Add spacing below the heading */
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem; /* Add spacing between form elements */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      max-width: 400px; /* Limit the width of inputs */
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .contact-form button {
+      padding: 0.5rem 1rem;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #333; /* Darker shade on hover */
+    }
+  </style>
+</BaseLayout>

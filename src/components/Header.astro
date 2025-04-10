@@ -11,15 +11,45 @@
     padding: 0; /* Remove any default padding */
     display: flex; /* Use flexbox for positioning */
     align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Ensure logo is on the left and social media icons are on the right */
   }
 
   .logo {
     margin-left: 1rem; /* Add some spacing from the left edge */
-    height: 230%; /* Adjusted from 170% to 120% for a smaller logo */
+    height: 100%; /* Reduced size for a smaller logo */
     /* If you prefer a larger logo, use a value like 200% instead */
+  }
+
+  .social-media {
+    margin-left: auto; /* Push social media icons to the right */
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .social-icon {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%); /* Make icons white for dark background */
+    transition: transform 0.2s ease;
+  }
+
+  .social-icon:hover {
+    transform: scale(1.2);
   }
 </style>
 
 <header>
-  <img src="/7d8f1726-893e-48e0-a285-14e52f0c1ae2-removebg-preview.png" alt="The Rabbit Hole Logo" class="logo">
+  <img src="/3460e990-589b-403e-8703-c8dfed81106c-removebg-preview.png" alt="The Rabbit Hole Logo" class="logo">
+  <div class="social-media">
+    <a href="https://discord.com" target="_blank" aria-label="Discord">
+      <img src="/public/discord-icon.svg" alt="Discord" class="social-icon">
+    </a>
+    <a href="https://twitter.com" target="_blank" aria-label="X (Twitter)">
+      <img src="/public/twitter-icon.svg" alt="X (Twitter)" class="social-icon">
+    </a>
+    <a href="https://github.com" target="_blank" aria-label="GitHub">
+      <img src="/public/github-icon.svg" alt="GitHub" class="social-icon">
+    </a>
+  </div>
 </header>
