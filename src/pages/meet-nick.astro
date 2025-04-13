@@ -8,7 +8,7 @@ const pageTitle = "Meet Nick";
     <p>Discover the journey of Nick, a passionate web developer and creator of "The Rabbit Hole."</p>
     <div class="timeline">
       {Array.from({ length: 13 }, (_, i) => (
-        <div class="timeline-event" key={i}>
+        <div class="timeline-event" data-key={i}>
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <h3>{2020 + i}</h3>
